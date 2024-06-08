@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPS Location</title>
+</head>
+<body>
+    <h1>GPS Location Track</h1>
+    
+    <p id="demo"> </p>
+    <button onclick="getPosition()">Click me</button>
+
+
+    <script>
+
+        function getPosition (){
+            navigator.geolocation.getCurrentPosition(function(position){
+            let altitude = position.coords.altitude;
+            let latitude = position.coords.latitude;
+            let longitude = position.coords.longitude;
+            let speed = position.coords.speed;
+
+           
+
+            let result = [
+             document.write("Altitude: " +altitude+"<br>"),
+            document.write("Latitude: " +latitude+"<br>"),
+            document.write("Longitude: " +longitude+"<br>"),
+            document.write("Speed: " +speed+"<br>")
+            ]
+
+            document.getElementById("demo").innerHTML = result;
+        })
+        }
+      
+    </script>
+</body>
+</html>
